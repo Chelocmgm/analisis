@@ -1,0 +1,247 @@
+body {
+  font: 10pt sans;
+}
+#mynetwork {
+  width: 85%;
+  height: 65%;
+  margin: 5px;
+  border: 2px solid #290766;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../mapa.png);
+}
+.matriz {
+  background-color: #290766;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #f9fcff;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.matriz:hover {
+  background-color: #fdfdfd;
+  border: 0.5px solid #113c75;
+  color: #113c75;
+}
+.botones {
+  background-color: #290766;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #e9e9e9;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.botones:hover {
+  background-color: #fdfdfd;
+  border: 0.5px solid #113c75;
+  color: #113c75;
+}
+.guardar {
+  background-color: #290766;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #290766;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.guardar:hover {
+  background-color: #fdfdfd;
+  border: 0.5px solid #113c75;
+  color: #113c75;
+}
+.cargar {
+  background-color: #290766;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #290766;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type="file"] {
+  display: none;
+}
+.cargar:hover {
+  background-color: #fdfdfd;
+  border: 0.5px solid #113c75;
+  color: #113c75;
+}
+#config {
+  float: left;
+  width: 400px;
+  height: 600px;
+}
+#input_output {
+  height: 10%;
+  width: 15%;
+}
+p {
+  font-size: 16px;
+  max-width: 700px;
+}
+table {
+  border-collapse: collapse;
+  width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+thead, td {
+  
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #8082eb;}
+
+thead {
+  background-color: #0f002c;
+  color: rgb(255, 255, 255);
+}
+.columna{
+  background-color:  #0f002c;
+  color: rgb(255, 255, 255);
+}
+.suma{
+  background-color: #2f0c5c;
+  color: rgb(255, 255, 255);
+}
+#input_output {
+  height: 10%;
+  width: 15%;
+}
+.johnson {
+  background-color: #231187;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #ffffff;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+.johnson:hover {
+  background-color: #7e114a;
+  border: 0.5px solid #7e114a;
+  color: white;
+}
+
+#centro{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 85%;
+}
+.numero{
+  width:100%;
+}
+.asignacion {
+  background-color: #113c75;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #113c75;
+  font-size: 16px;
+  width: 49.7%;
+  cursor: pointer;
+}
+.asignacion:hover {
+  background-color: #fdfdfd;
+  border: 0.5px solid #113c75;
+  color: #113c75;
+}
+.sorts {
+  background-color: #113c75;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #113c75;
+  font-size: 16px;
+  width: 19.7%;
+  cursor: pointer;
+}
+.sorts:hover {
+  background-color: #fdfdfd;
+  border: 0.5px solid #113c75;
+  color: #113c75;
+}
+.random {
+  background-color: #113c75;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #113c75;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+.random:hover {
+  background-color: #fdfdfd;
+  border: 0.5px solid #113c75;
+  color: #113c75;
+}
+.colores{
+  background-color: #fdbb3fe5;
+  color: #000000;
+}
+.arbol {
+  background-color: #113c75;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 0.5px solid #113c75;
+  font-size: 16px;
+  width: 32.7%;
+  cursor: pointer;
+}
+.arbol:hover {
+  background-color: #fdfdfd;
+  border: 0.5px solid #113c75;
+  color: #113c75;
+}
