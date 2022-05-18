@@ -72,6 +72,38 @@
       
     }
 
+//guardar
+  function exportNetworkTree() {
+    Swal.fire({
+      title: "Ingrese el nombre del Archivo",
+      input: "text",
+      showCancelButton: true,
+      confirmButtonText: "Aceptar",
+      cancelButtonText: "Cancelar",
+      inputValidator: nombre => {
+          if (!nombre) {
+              return "Por favor escribe un nombre";
+          } else {
+              return undefined;
+          }
+      }
+  }).then(resultado => {
+      if (resultado.value) {           
+          vLabelNode=[];
+          let tree = document.getElementById("some-number").value; 
+          var exportValue = JSON.stringify({tree}, undefined, 1);
+          var archivo=resultado.value;
+          downloadObjectAsJson(exportValue, archivo);
+          Swal.fire(
+            'Completado',
+            'El archivo fue guardado exitosamente',
+            'success'
+          )
+      }
+  });
+    
+  }
+
     function downloadObjectAsJson(exportObj, exportName){
       var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(exportObj);
       var downloadAnchorNode = document.createElement('a');
