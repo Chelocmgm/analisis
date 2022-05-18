@@ -81,6 +81,44 @@
       downloadAnchorNode.click();
       downloadAnchorNode.remove();
     }
+
+    var inputValueTree;
+    document.getElementById('btnCargarArbol').addEventListener( 
+      'change',  
+      changeEvent => { 
+        console.log("entro");
+        changeEvent.stopPropagation(); 
+        changeEvent.preventDefault(); 
+        readJsonFileTree(changeEvent.target.files[0]); 
+      }, 
+      false 
+    ); 
+  
+    function readJsonFileTree(jsonFile) { 
+      var reader = new FileReader(); 
+      reader.addEventListener('load', (loadEvent) => { 
+        try { 
+          inputValueTree = JSON.parse(loadEvent.target.result); 
+          importNetworkTree(inputValueTree);
+        } catch (error) { 
+          console.error(error); 
+        } 
+      }); 
+      reader.readAsText(jsonFile); 
+    } 
+    
+    function importNetworkTree(archive) {
+      //var inputData = JSON.parse(archive);
+      console.log(archive.tree);
+      tree = archive.tree;
+      console.log(tree);
+      var data = tree;
+      document.getElementById("some-number").value = data;
+    
+    }
+
+
+
     var inputValue;
     document.getElementById('btnCargar').addEventListener( 
       'change',  
@@ -171,7 +209,4 @@
         return obj[key];
       });
     }
-  
-    
-  
-    
+      
