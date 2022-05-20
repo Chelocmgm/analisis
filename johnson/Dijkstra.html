@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dijkstra</title>
+	<link rel="stylesheet" href="java/styles.css">
+</head>
+<body>
+	<section class="principalContainer">
+		<div class="divBotones">
+			<button id="btnCreateVertice" class="btnCreateVertice">Crear Vértice</button>
+			<button id="btnCreateEdge" class="btnCreateEdge">Crear Arista</button>
+			<button id="btnRoute" class="btnRoute">Calcular Ruta</button>
+
+			<form action="#" class="formVertices form">
+				<label for="positionVertice">Posición del vértice en coordenadas (x,y)</label>
+				<div class="formRow">
+					<input type="number" id="positionX" min="0" max="100" placeholder="X">
+					<input type="number" id="positionY" min="0" max="100" placeholder="Y">
+				</div>
+
+				<label for="nameVertice">Nombre del vértice</label>
+				<div class="formRow">
+					<input type="text" id="nameVertice" placeholder="Nombre del vertice">
+					<input type="submit" id="btnCrearV" value="Crear vértice" class="btn"></input>
+				</div>
+			</form>
+
+			<form action="#" class="formEdges form">
+				<label for="initialV">Vértice inicial</label>
+				<select id="initialV"></select>
+
+				<label for="finalV">Vértice final</label>
+				<select id="finalV"></select>
+
+				<input type="submit" id="btnCrearE" value="Crear arista" class="btn"></input>
+			</form>
+
+			<form action="#" class="formCalculate form">
+				<label for="initialVC">Vértice inicial</label>
+				<select id="initialVC"></select>
+
+				<label for="finalVC">Vértice final</label>
+				<select id="finalVC"></select>
+
+				<input type="submit" id="btnCalcRoute" value="Calcular ruta" class="btn"></input>
+			</form>
+
+			<p id="distance"></p>
+
+			<button id="btnClear" class="btnClear">Limpiar</button>
+			<a class="botones" href="johnson.html" id="johnson">Menu Principal</a>
+
+		</div>
+
+		<div class="divMapa">
+			<canvas id="mapa"></canvas>
+		</div>
+	</section>
+
+	<script src="java/jquery-3.4.1.min.js"></script>
+	<script src="java/Dijkstra.js"></script>
+	<script src="java/Main.js"></script>
+</body>
+</html>
