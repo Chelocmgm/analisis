@@ -1,0 +1,19 @@
+.table__container--transporte {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-grow: 20;
+    overflow: auto;
+}
+
+.available__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.available__input:nth-child(1) {
+    border: solid #ec1550;
+    background-color: #ec1550;
+    color: white;
+}

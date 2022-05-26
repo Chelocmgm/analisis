@@ -1,0 +1,43 @@
+.node {
+    margin: 5px;
+    border: 1px solid rgb(236, 69, 69);
+}
+
+.node td {
+    border: 1px solid black;
+    width: 1rem;
+    text-align: center;
+}
+
+.node--critical {
+    border: 1px solid green;
+    background-color: green;
+}
+
+.node--critical td {
+    border: 1px solid white;
+    color: white
+}
+
+.popper-div {
+    overflow: hidden;
+    z-index: -9999;
+}
+
+.square{
+    border: 1px solid white;
+    background-color: green;
+    color: white;
+}
+
+.radio-wrapper{
+    border: 1px solid white;
+    background-color: #173eec;
+    color: white;
+    font-size: 30px;
+    width: 250px;
+    justify-content: center;
+
+
+}
+

@@ -1,0 +1,17 @@
+.footer button {
+    background-color: #15afec;
+    font-family: "comic-sans";
+    font-size: 20px;
+    color: #ffffff;
+    border: solid #000000;
+}
+
+.footer button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .footer button {
+       width: 30%;
+    }
+}

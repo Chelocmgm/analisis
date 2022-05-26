@@ -1,0 +1,43 @@
+.table__container {
+    width: 90%;
+    margin: 0 auto;
+    flex-grow: 20;
+    overflow: auto;
+}
+
+.table__col {
+    width: 3rem;
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.table__input {
+    margin: 0;
+    padding: 0;
+    width: 6rem;
+    height: 2rem;
+    text-align: center;
+}
+
+.table__col:nth-child(1){
+    border: solid #ec1550;
+    background-color: #ec1550;
+}
+
+.counter__container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.table__row:nth-child(1){
+    border: solid #ec1550;
+    background-color: #ec1550;
+}
+
+
+.radio-wrapper {
+    display: flex;
+    margin: 0 auto;
+}

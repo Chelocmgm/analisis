@@ -1,0 +1,20 @@
+.arboles__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.arboles__options--row {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem auto;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.arboles__options--column {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}

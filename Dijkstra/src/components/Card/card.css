@@ -1,0 +1,26 @@
+.card-content{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1D008F;  
+    border: 1px solid #ec1550;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.card-content button{
+    margin-top: 3%;
+}
+
+.card-content:hover{
+    background-color: #EFEBFF;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.card__button {
+    padding: 1rem 0;
+}
