@@ -149,7 +149,10 @@
     
     }
 
-
+    function bonusTree(){
+      console.log("entro");
+      document.getElementById("some-number").value=document.getElementById("result").innerHTML;
+    }
 
     var inputValue;
     document.getElementById('btnCargar').addEventListener( 
