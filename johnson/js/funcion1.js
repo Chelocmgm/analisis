@@ -4,24 +4,15 @@ var edges = new vis.DataSet();
 var flag=0;
 var nombres = [];
 var options = {
-  nodes:{
-    physics: false,
-    color: {
-      border: '#8A29DF',
-      background: '#8A29DF',
-      highlight: {
-        border: '#5F03AF',
-        background: '#5F03AF'
+    nodes:{
+        physics: false,
+        shape: 'image',
+        image: 'rep1.png',
+        size: 30,
+        font: {
+          color: '#000000',
+        }
       },
-      hover: {
-        border: '#1559b3',
-        background: '#113c75'
-      }
-    },
-    font: {
-      color: '#ffffff',
-    }
-  },
   edges:{
         arrows:{
           to:{
