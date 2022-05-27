@@ -21,7 +21,7 @@ import "../Styles/johnson.css";
 
 
 cytoscape.use(popper);
-
+let sum =0;
 const Dijkstra = () => {
     const [selected, setSelected] = useState("");
     const dispatch = useDispatch();
@@ -94,23 +94,32 @@ const Dijkstra = () => {
             });
             return popper;
         };
-        
+        sum=0;
+
         // //Agregando los popper a cada nodo
         vertexList.forEach((e) => {
             //Obtenemos la referencia del nodo del cy declarado
-            // console.log(listkey[e]);
+            //console.log(keys[e]);
+            
             const node = cy.getElementById(keys[e]);
             //Se envia la referencia del nodo y los valores de los poppers
             const popperNode = makePopperNode(
                  node,
                  dijkstraResult.dist.get(e)
+                 
             );
+            console.log(dijkstraResult.dist.get(e));
+                sum= sum+parseInt(dijkstraResult.dist.get(e),10);
+                
+
             let updateNode = () => {
                 popperNode.update();
             };
             node.on("position", updateNode);
             cy.on("render", updateNode);
         });
+        console.log('Suma total:', sum);
+        
     };
 
     const radioButtonChange = (e) => {
@@ -122,15 +131,16 @@ const Dijkstra = () => {
         <div className="container">
             <Modal />
             <Header logo="/img/logo-yaigo.png" btnText="Resolver con Algoritmo de Dijkstra" onClick={onClick} dir="/Dijkstra_manual.pdf" />
+                     
             <div className="radio-wrapper">
               <input onChange={radioButtonChange} type="radio" id="max" name="radio" />
               <label htmlFor="max">MAX</label>
 
               <input onChange={radioButtonChange} type="radio" id="min" name="radio" />
               <label htmlFor="min">MIN</label>
+
             </div>
             <Graph />
-            
             
             <Toolbar />
         </div>
