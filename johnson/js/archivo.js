@@ -113,7 +113,7 @@
       downloadAnchorNode.click();
       downloadAnchorNode.remove();
     }
-
+ /*
     var inputValueTree;
     document.getElementById('btnCargarArbol').addEventListener( 
       'change',  
@@ -148,7 +148,7 @@
       document.getElementById("some-number").value = data;
     
     }
-
+*/
     function bonusTree(){
       console.log("entro");
       document.getElementById("some-number").value=document.getElementById("result").innerHTML;
