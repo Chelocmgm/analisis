@@ -4,15 +4,15 @@ var edges = new vis.DataSet();
 var flag=0;
 var nombres = [];
 var options = {
-    nodes:{
-        physics: false,
-        shape: 'image',
-        image: 'rep1.png',
-        size: 30,
-        font: {
-          color: '#000000',
-        }
-      },
+  nodes:{
+    physics: false,
+    shape: 'image',
+    image: 'rep1.png',
+    size: 30,
+    font: {
+      color: '#000000',
+    }
+  },
   edges:{
         arrows:{
           to:{
@@ -479,6 +479,7 @@ function llenarTabla(){
       var tos=[];
       var x=0;
       var i=0;
+      
       edges.forEach((edge)=>{ 
         valores.push(edge.valor);
         valores.sort();
@@ -531,6 +532,8 @@ function llenarTabla(){
               edges.update({id:edge.id,label:edge.label+"\n"+edge.sublabel1,color:{color:"#8AE35F"}}); 
               froms.push(edge.from);
               tos.push(edge.to);
+              final=final+edge.valor;
+              console.log("DSd",final);
             }  
           }       
         });
@@ -539,6 +542,7 @@ function llenarTabla(){
       
     }
     function kruskal2() {
+      var final = 0;
         edges.forEach((edge)=>{
             if(edge.valor<0){
                 edge.valor= edge.valor * -1;
@@ -586,6 +590,8 @@ function llenarTabla(){
                 nodes.update({id:edge.from,color:{background:"#8AE35F"}});
 
             });
+            final=final+parseInt(e.weight);
+            console.log("DSd",final);
             g_edges.push({
                 from: v,
                 to: w,
@@ -616,11 +622,12 @@ function llenarTabla(){
     
         console.log(g.V); // display 6, which is the number of vertices in g
         console.log(g.adj(0)); // display [5, 1, 2], which is the adjacent list to vertex 0
-    
+        document.getElementById('total').style.visibility = 'visible';
+        document.getElementById('total').innerHTML=final;
           }
           
     function kruskal1() {
-    console.log("Entrar prueba");
+      var final = 0;
     document.getElementById('btnMatriz').style.visibility = 'Maximizar';
       nodes.forEach((node)=>{
         nodes.update({id:node.id,color:{background:"#000080"}});;
@@ -663,6 +670,8 @@ function llenarTabla(){
           nodes.update({id:edge.from,color:{background:"#8AE35F"}});
 
         });
+        final=final-parseInt(e.weight);
+        console.log("DSd",final);
         g_edges.push({
             from: v,
             to: w,
@@ -693,7 +702,8 @@ function llenarTabla(){
 
     console.log(g.V); // display 6, which is the number of vertices in g
     console.log(g.adj(0)); // display [5, 1, 2], which is the adjacent list to vertex 0
-
+    document.getElementById('total').style.visibility = 'visible';
+    document.getElementById('total').innerHTML = final;
       }
 
       var jsgraphs = jsgraphs || {};
@@ -2080,6 +2090,204 @@ function llenarTabla(){
                 }
                 a++;
                 console.log(a+"edge:"+edge.to)
+            });
+          });
+        
+        
+      }
+      function johnson3(){
+        document.getElementById('referencia').style.visibility = 'visible';
+        var max = 0; 
+        var label = [];
+        edges.forEach((edges) => {
+           if(max < parseInt(edges.valor)){
+               max = edges.valor;
+           }
+           label.push(edges.valor);
+        });
+        
+       console.log("Maximo",max);
+        edges.forEach((edges) => {
+            edges.valor =parseInt(edges.valor * -1)+ parseInt(max)   ; 
+            console.log(edges.valor);
+        });
+        console.log(label);
+        nodes.forEach((node)=>{
+          nodes.update({id:node.id,color:{background:"#939A9A"}});;
+        });
+        edges.forEach((edge)=>{
+          edges.update({id:edge.id,label:edge.valor,color:{color:"#939A9A"}});;
+        });
+  
+        var tpp=[];
+        var tppf=[];
+        var ttp=[];
+        var ttpf=[];
+        var holguras=[];
+        var fflag=0;
+        var idn=0;
+        var res=0;
+        var max=0;
+        var idm=0;
+        tpp.push({idn , res});
+        edges.forEach((edge)=>{ 
+          var ffrom=edge.from;
+          var valor=edge.valor;
+          tpp.forEach((a)=>{
+              if(a.idn==ffrom)
+              {
+                res=parseInt(a.res)+parseInt(valor);
+                idn=edge.to;
+                tpp.push({idn,res});
+              }
+            });
+        });
+        tpp.forEach((a)=>{
+          var aid=a.idn;
+          var ares=a.res;
+          var ff=0;
+          if(fflag==0){
+            tppf.push({aid,ares});
+            fflag=1;
+          }
+          else{
+            tppf.forEach((af)=>{
+              if(af.aid==aid){
+                if(parseInt(af.ares)<parseInt(ares))
+                {
+                  af.ares=ares;
+                }
+                ff=1;
+              }
+            });
+            if(ff==0){
+              tppf.push({aid,ares});
+            }
+          }
+        });
+  
+        tppf.forEach((a)=>{
+          if(a.ares>max){
+            max=a.ares;
+            idm=a.aid;
+          }
+        });
+        ttp.push({idm,max});
+  
+      for(var ic=0;ic<tpp.length;ic++){
+        ttp.forEach((a)=>{
+          var iid=a.idm;
+          edges.forEach((edge)=>{
+              var tto=edge.to;
+              var valor=edge.valor;
+              if(iid==tto){
+                max=parseInt(a.max)-parseInt(valor);
+                idm=edge.from;
+                ttp.push({idm,max});
+              }
+          });
+        });
+      }
+        ttp.forEach((a)=>{
+          var aid=a.idm;
+          var ares=a.max;
+          var ff=0;
+          if(fflag==0){
+            ttpf.push({aid,ares});
+            fflag=1;
+          }
+          else{
+            ttpf.forEach((af)=>{
+              if(af.aid==aid){
+                if(parseFloat(af.ares)>=parseFloat(ares))
+                {
+                  af.ares=ares;
+                }
+                ff=1;
+              }
+            });
+            if(ff==0){
+              ttpf.push({aid,ares});
+            }
+          }
+        });      
+        nodes.forEach((node)=>{
+          tppf.forEach((a)=>{
+            ttpf.forEach((b)=>{
+              if(node.id==a.aid && node.id==b.aid){
+                nodes.update({id:node.id,ttp:a.ares,tpp:b.ares,title:"ttp:"+a.ares+" | tpp: "+b.ares}); 
+              }
+            });
+          });
+        });
+        
+        edges.forEach((edge)=>{
+          var vttp=0;
+          var vtpp=0;
+          var vto=edge.to;
+          var vfrom=edge.from;
+          var idee=edge.id;
+          var valor=0;
+          valor=parseInt(edge.valor);
+          nodes.forEach((node)=>{
+              if(node.id==vfrom){
+                vttp=parseInt(node.ttp);           
+              }
+              if(node.id==vto){
+                vtpp=parseInt(node.tpp);
+              }
+          });
+          var holg=vtpp-vttp-valor;
+          holguras.push({idee,holg,vtpp,vttp,valor});
+          edges.update({id:edge.id,sublabel1:"h="+holg});
+        });
+        
+
+        cont="0";
+        var i = 0; 
+        var index = nodes.length - 1;
+        console.log(edges);
+        
+        edges.forEach((edge)=>{
+        
+          if(edge.sublabel1=="h=0")
+          {
+            nodes.update({id:edge.from,color:{background:"#8AE35F"},label: cont});
+            auxa=parseInt(label[i])+parseInt(cont);
+            cont=""+auxa+"";
+            edges.update({id:edge.id,label:edge.label,color:{color:"#8AE35F"}}); 
+            nodes.update({id:edge.to,color:{background:"#8AE35F"}, label: cont});
+            
+            
+          }
+          else{
+
+        
+            edge.label = ""+label[i]+"";
+            nodes.update({id:edge.to,color:{background:"#939A9A"},label: edge.label});
+            edges.update({id:edge.id,label:edge.label});
+             
+          }
+          i++; 
+          nodes.update({id:index,color:{background:"#8AE35F"}, label: cont});
+        });
+
+        
+        nodes.forEach((node)=>{
+            console.log(node);
+            a=0;
+            edges.forEach((edge)=>{
+
+                if(node.id == edge.to){
+                  
+                    if(edge.sublabel1 != "h=0"){
+                        b=parseInt(node.label)+parseInt(edge.label);
+                        
+                    }
+                    
+                }
+                a++;
+              
             });
           });
         

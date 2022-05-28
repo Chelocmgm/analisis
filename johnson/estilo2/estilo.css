@@ -8,8 +8,12 @@ body {
   border: 2px solid #290766;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(../mapa.png);
 }
+
+.total {
+  text-align: center;  
+}
+
 .matriz {
   background-color: #290766;
   border-radius: 4px;

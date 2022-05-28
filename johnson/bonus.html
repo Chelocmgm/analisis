@@ -1,0 +1,106 @@
+<html>
+    <head>
+    <meta charset="UTF-8" >
+    <title>Creacion de Grafos</title>
+    <link type="text/css" href="estilos/estilo.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+     
+    <body style="background-color: #290766"> 
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: url('Fondo.jpg');">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="johnson.html"><img src="logo-yaigo.png" width="200" height="90"></a>&nbsp&nbsp&nbsp
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+              
+
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" style="background-color: #290766; border: 0.5px solid #f9fcff; color:#ffffff;">
+                    Archivo
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" style="background-color: #290766; color:#ffffff;" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <input class="guardar" type="button" value="Guardar Archivo" id="btnGuardar" onclick= "exportNetworkTree()" >
+                    <label for="btnCargarArbol" class="cargar">Cargar Archivo</label>
+                    <input type="file" value="Cargar Archivo" id="btnCargarArbol" name="jsonFile" >
+                  </ul>
+            
+              <a class="botones" href="johnson.html" role="button">Johnson</a>
+              <a class="botones" href="Asignacion.html" role="button">Asignacion</a>
+              <a class="botones" href="transporte.html" role="button">Noroeste</a>
+              <a class="botones" href="sort.html" role="button">Sort</a>
+              <a class="botones" href="contact-us.html" role="button">Contactanos</a>
+              <a class="botones" href="trees.html" role="button">Arboles</a>
+              <a class="botones" href="http://localhost:3000/dijkstra" target="_blank" role="button">Dijkstra</a>
+              <a class="botones" href="kruskal.html" role="button">Kruskal</a>
+              <a class="botones" href="https://drive.google.com/file/d/1vfPW6gr49uVyNqzQWb3jtj5No6IPr_O8/view?usp=sharing" role="button">Manual</a>
+              
+            </div>
+
+          </div>
+        </div>
+      </nav>
+      
+
+      <h1 class="bg-success" Align="center">BONUS</h1>
+      <div class="form-floating" id="centro">
+          <textarea class="form-control"  id="inorden" style="height: 120px;width: 100%"></textarea>
+          <label for="entrada">In-orden : </label>
+        </div>
+        
+        <div class="form-floating" id="centro">
+            <textarea class="form-control"  id="preorden" style="height: 120px;width: 100%"></textarea>
+            <label for="entrada">Pre-orden : </label>
+          </div>
+
+        <div class="form-floating" id="centro">
+          <textarea class="form-control"  id="postorden" style="height: 120px;width: 100%"></textarea>
+          <label for="entrada">Post-orden : </label>
+        </div>
+        <div id="centro">
+            <input class="johnson btn btn-secondary" type="button" value="Agregar Nodos" id="btnArbol" onclick="comparacion()" >
+          </div>	
+      
+      <br>
+      <div id="my"> </div>
+									  <script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
+									  <script src='https://unpkg.com/alea@1.0.0/alea.js'></script>
+									  <script  src="js/arboles.js"></script>
+									  <script  src="js/archivoArb.js"></script>
+									  <script src="js/sweetalert2.all.min.js"></script>
+									  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js"></script>
+									  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js"></script>
+									  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.sound.min.js"></script>
+									  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <div id="tablePrint"> </div>
+      <script  src="js/ArchivoArbBonus.js"></script>
+          <script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
+          <script src='https://unpkg.com/alea@1.0.0/alea.js'></script>
+          <script  src="js/funcion.js"></script>
+          <script  src="js/archivo.js"></script>
+          <script  src="js/arboles.js"></script>
+		    <script  src="js/archivoArb.js"></script>
+          <script src="js/sweetalert2.all.min.js"></script>
+          <script src="js/jquery.min.js"></script>
+          <script src="js/jquery-migrate-3.0.1.min.js"></script>
+          <script src="js/popper.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/jquery.easing.1.3.js"></script>
+          <script src="js/jquery.waypoints.min.js"></script>
+          <script src="js/jquery.stellar.min.js"></script>
+          <script src="js/owl.carousel.min.js"></script>
+          <script src="js/jquery.magnific-popup.min.js"></script>
+          <script src="js/aos.js"></script>
+          <script src="js/jquery.animateNumber.min.js"></script>
+          <script src="js/bootstrap-datepicker.js"></script>
+          <script src="js/jquery.timepicker.min.js"></script>
+          <script src="js/scrollax.min.js"></script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+          <script src="js/google-map.js"></script>
+          <script src="js/main.js"></script>
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+
+</html>
