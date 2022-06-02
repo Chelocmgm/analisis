@@ -1,14 +1,17 @@
 var exportArea;
+var exportArea1;
+var exportArea2;
 var importButton;
 var exportButton;
+var vLabelNode=[];
+
 function init() {
 
-  exportArea = document.getElementById("inorder");
-  exportArea1 = document.getElementById("preorder");
-  exportArea2 = document.getElementById("postorder");
+  exportArea = document.getElementById("inorden");
+  exportArea1 = document.getElementById("preorden");
+  exportArea2 = document.getElementById("postorden");
   importButton = document.getElementById("btnGuardar");
   exportButton = document.getElementById("btnCargar");
-
   draw();
 }
 
@@ -27,19 +30,20 @@ function exportNetwork() {
         }
     }
 }).then(resultado => {
-    if (resultado.value) {    
-        var datos = aux;
-        var datos1 = aux1;
-        var datos2 = aux2;
+    if (resultado.value) {   
+      vLabelNode=[];
 
-        var exportValue = JSON.stringify({datos,datos1,datos2}, undefined, 2);
-        var archivo=resultado.value;
-        downloadObjectAsJson(exportValue, archivo);
-        Swal.fire(
-          'Completado',
-          'El archivo fue guardado exitosamente',
-          'success'
-        )
+      let ino = document.getElementById("inorden").value; 
+      let pre = document.getElementById("preorden").value; 
+      let post = document.getElementById("postorden").value; 
+          var exportValue = JSON.stringify({ino,pre,post}, undefined, 3);
+          var archivo=resultado.value;
+          downloadObjectAsJson(exportValue, archivo);
+          Swal.fire(
+            'Completado',
+            'El archivo fue guardado exitosamente',
+            'success'
+          )
     }
 });
   
@@ -79,13 +83,13 @@ function readJsonFile(jsonFile) {
 } 
 
 function importNetwork(archive) {
-  texto = getDatos(archive);
-  texto1 = getDatos1(archive);
-  texto2 = getDatos2(archive);  
+  texto = archive.ino;
+  texto1 = archive.pre;
+  texto2 = archive.post;
 
-  document.getElementById("entrada").innerHTML = texto;
-  document.getElementById("entrada1").innerHTML = texto1;
-  document.getElementById("entrada2").innerHTML = texto2;
+  document.getElementById("inorden").value = texto;
+  document.getElementById("preorden").value = texto1;
+  document.getElementById("postorden").value = texto2;
 
 }
 function getDatos(data) {
