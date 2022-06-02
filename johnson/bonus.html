@@ -22,9 +22,9 @@
                     Archivo
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark" style="background-color: #290766; color:#ffffff;" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <input class="guardar" type="button" value="Guardar Archivo" id="btnGuardar" onclick= "exportNetworkTree()" >
-                    <label for="btnCargarArbol" class="cargar">Cargar Archivo</label>
-                    <input type="file" value="Cargar Archivo" id="btnCargarArbol" name="jsonFile" >
+                    <input class="guardar" type="button" value="Guardar Archivo" id="btnGuardar" onclick= "exportNetwork()" >
+                    <label for="btnCargar" class="cargar">Cargar Archivo</label>
+                    <input type="file" value="Cargar Archivo" id="btnCargar" name="jsonFile" >
                   </ul>
             
               <a class="botones" href="johnson.html" role="button">Johnson</a>
@@ -44,7 +44,7 @@
       </nav>
       
 
-      <h1 class="bg-success" Align="center">BONUS</h1>
+      <h1 class="bg-light" Align="center">BONUS</h1>
       <div class="form-floating" id="centro">
           <textarea class="form-control"  id="inorden" style="height: 120px;width: 100%"></textarea>
           <label for="entrada">In-orden : </label>
@@ -68,7 +68,6 @@
 									  <script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
 									  <script src='https://unpkg.com/alea@1.0.0/alea.js'></script>
 									  <script  src="js/arboles.js"></script>
-									  <script  src="js/archivoArb.js"></script>
 									  <script src="js/sweetalert2.all.min.js"></script>
 									  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js"></script>
 									  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.dom.min.js"></script>
@@ -79,9 +78,7 @@
           <script src='https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js'></script>
           <script src='https://unpkg.com/alea@1.0.0/alea.js'></script>
           <script  src="js/funcion.js"></script>
-          <script  src="js/archivo.js"></script>
           <script  src="js/arboles.js"></script>
-		    <script  src="js/archivoArb.js"></script>
           <script src="js/sweetalert2.all.min.js"></script>
           <script src="js/jquery.min.js"></script>
           <script src="js/jquery-migrate-3.0.1.min.js"></script>
