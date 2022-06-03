@@ -1920,7 +1920,7 @@ function llenarTabla(){
 
 
       function johnson2(){
-        document.getElementById('referencia').style.visibility = 'visible';
+        document.getElementById('btnMatriz').style.visibility = 'Maximizar';
         nodes.forEach((node)=>{
           nodes.update({id:node.id,color:{background:"#939A9A"}});;
         });
